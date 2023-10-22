@@ -25,14 +25,14 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/CertBotAutoNew && mv target/release/CertBotAutoNew target/release/CertBotAutoNew_amd64
+        run: cargo build --all --release && strip target/release/CertBotAutoRenew && mv target/release/CertBotAutoRenew target/release/CertBotAutoRenew_amd64
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/CertBotAutoNew_amd64
+            target/release/CertBotAutoRenew_amd64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -57,7 +57,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: target/release/CertBotAutoNew.exe
+          files: target/release/CertBotAutoRenew.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -77,13 +77,13 @@ jobs:
           override: true
 
       - name: Build for mac
-        run: cargo build --all --release && strip target/release/CertBotAutoNew && mv target/release/CertBotAutoNew target/release/CertBotAutoNew_darwin
+        run: cargo build --all --release && strip target/release/CertBotAutoRenew && mv target/release/CertBotAutoRenew target/release/CertBotAutoRenew_darwin
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/CertBotAutoNew_darwin
+            target/release/CertBotAutoRenew_darwin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

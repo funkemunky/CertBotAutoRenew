@@ -1,5 +1,5 @@
 use std::env;
-use std::process::Command;
+use std::process::{Command, Output};
 use std::thread::sleep;
 use std::time::Duration;
 
@@ -39,7 +39,8 @@ fn process_renewal(domain: &str, runtime: Duration) {
         match output {
             Ok(output) => {
                 println!("Output: {}", String::from_utf8_lossy(&output.stdout));
-                println!("Error: {}", String::from_utf8_lossy(&output.stderr));
+
+                println!("Sleeping...");
                 sleep(runtime);
             },
             Err(e) => {

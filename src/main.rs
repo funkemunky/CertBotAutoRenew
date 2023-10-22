@@ -44,6 +44,7 @@ fn process_renewal(domain: &str, runtime: Duration) {
             },
             Err(e) => {
                 eprintln!("Error: {}", e);
+                sleep(Duration::from_secs(5));
             }
         }
     }

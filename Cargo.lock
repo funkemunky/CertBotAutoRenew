@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "CertBotAutoRenew"
+name = "cert_bot_auto_renew"
 version = "0.1.0"

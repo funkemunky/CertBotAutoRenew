@@ -34,13 +34,13 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/CertBotAutoRenew && mv target/release/CertBotAutoRenew target/release/CertBotAutoRenew_linux_amd64
+        run: cargo build --all --release && strip target/release/cert_bot_auto_renew && mv target/release/cert_bot_auto_renew target/release/cert_bot_auto_renew_linux_amd64
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: CertBotAutoRenew-linux-amd64
-          path: target/release/CertBotAutoRenew_linux_amd64
+          name: cert_bot_auto_renew-linux-amd64
+          path: target/release/cert_bot_auto_renew_linux_amd64
 
   build-win:
     runs-on: windows-latest
@@ -69,8 +69,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: CertBotAutoRenew-win
-          path: target/release/CertBotAutoRenew.exe
+          name: cert_bot_auto_renew-win
+          path: target/release/cert_bot_auto_renew.exe
 
   build-mac-intel:
     runs-on: macos-latest
@@ -95,13 +95,13 @@ jobs:
           override: true
 
       - name: Build for Mac Intel
-        run: cargo build --all --release && strip target/release/CertBotAutoRenew && mv target/release/CertBotAutoRenew target/release/CertBotAutoRenew_darwin_intel
+        run: cargo build --all --release && strip target/release/cert_bot_auto_renew && mv target/release/cert_bot_auto_renew target/release/cert_bot_auto_renew_darwin_intel
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: CertBotAutoRenew-darwin-intel
-          path: target/release/CertBotAutoRenew_darwin_intel
+          name: cert_bot_auto_renew-darwin-intel
+          path: target/release/cert_bot_auto_renew_darwin_intel
 
   build-mac-arm64:
     runs-on: macos-latest
@@ -126,10 +126,10 @@ jobs:
           override: true
 
       - name: Build for Apple Silicon
-        run: cargo build --all --release && strip target/release/CertBotAutoRenew && mv target/release/CertBotAutoRenew target/release/CertBotAutoRenew_darwin_arm64
+        run: cargo build --all --release && strip target/release/cert_bot_auto_renew && mv target/release/cert_bot_auto_renew target/release/cert_bot_auto_renew_darwin_arm64
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: CertBotAutoRenew-darwin-arm64
-          path: target/release/CertBotAutoRenew_darwin_arm64
+          name: cert_bot_auto_renew-darwin-arm64
+          path: target/release/cert_bot_auto_renew_darwin_arm64
